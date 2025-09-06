@@ -49,7 +49,7 @@ Visit the live portfolio: [Your GitHub Pages URL]
 
 ## 📄 License
 
-© 2024 Abhishek Kumar. All rights reserved.
+© 2025 Abhishek Kumar. All rights reserved.
 
 ---
 
