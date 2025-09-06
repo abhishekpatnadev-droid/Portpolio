@@ -189,6 +189,125 @@ window.addEventListener('load', () => {
     }
 });
 
+// APK Test functionality
+function testApp(appName) {
+    // Create modal for app testing info
+    const modal = document.createElement('div');
+    modal.className = 'test-modal';
+    modal.innerHTML = `
+        <div class="test-modal-content">
+            <div class="test-modal-header">
+                <h3>Testing ${appName}</h3>
+                <button class="test-modal-close" onclick="closeTestModal()">&times;</button>
+            </div>
+            <div class="test-modal-body">
+                <div class="test-steps">
+                    <h4>How to test this app:</h4>
+                    <ol>
+                        <li>Download the APK file by clicking "Download APK"</li>
+                        <li>Enable "Install from unknown sources" in your Android settings</li>
+                        <li>Install the APK on your Android device</li>
+                        <li>Open the app and explore its features</li>
+                        <li>Share your feedback via WhatsApp or email</li>
+                    </ol>
+                </div>
+                <div class="test-features">
+                    <h4>Key features to test:</h4>
+                    <ul id="feature-list">
+                        <!-- Features will be populated based on app -->
+                    </ul>
+                </div>
+                <div class="test-actions">
+                    <a href="https://wa.me/917979708232?text=Hi%20Abhishek,%20I%20tested%20${encodeURIComponent(appName)}%20app.%20Here's%20my%20feedback:" class="feedback-btn" target="_blank">Send Feedback</a>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(modal);
+    
+    // Populate features based on app
+    const featureList = document.getElementById('feature-list');
+    const features = getAppFeatures(appName);
+    
+    features.forEach(feature => {
+        const li = document.createElement('li');
+        li.textContent = feature;
+        featureList.appendChild(li);
+    });
+    
+    // Show modal with animation
+    setTimeout(() => {
+        modal.classList.add('show');
+    }, 10);
+}
+
+function getAppFeatures(appName) {
+    const features = {
+        'BrainBuzz': [
+            'Interactive quiz interface',
+            'Score tracking system',
+            'Multiple choice questions',
+            'Timer functionality',
+            'Results and analytics'
+        ],
+        'Calendar': [
+            'Event creation and editing',
+            'Monthly/weekly view',
+            'Reminder notifications',
+            'Event categories',
+            'Search functionality'
+        ],
+        'RTV Prototype': [
+            'Video streaming quality',
+            'User interface navigation',
+            'Connection stability',
+            'Audio synchronization',
+            'Control responsiveness'
+        ],
+        'Test App': [
+            'Core functionality testing',
+            'UI/UX responsiveness',
+            'Performance optimization',
+            'Error handling',
+            'Feature integration'
+        ],
+        'Admin Panel': [
+            'User management system',
+            'Dashboard analytics',
+            'Data entry and editing',
+            'Report generation',
+            'Security and permissions'
+        ],
+        'Limra Student Portal': [
+            'Student login system',
+            'Academic records access',
+            'Assignment submissions',
+            'Grade viewing',
+            'Communication features'
+        ]
+    };
+    
+    return features[appName] || ['General app functionality', 'User interface', 'Performance', 'Stability'];
+}
+
+function closeTestModal() {
+    const modal = document.querySelector('.test-modal');
+    if (modal) {
+        modal.classList.remove('show');
+        setTimeout(() => {
+            modal.remove();
+        }, 300);
+    }
+}
+
+// Close modal when clicking outside
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('test-modal')) {
+        closeTestModal();
+    }
+});
+
 // Performance optimization for scroll events
 let ticking = false;
 

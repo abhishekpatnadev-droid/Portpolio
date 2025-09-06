@@ -25,6 +25,7 @@
             <a href="#home" class="nav-link">Home</a>
             <a href="#about" class="nav-link">About</a>
             <a href="#portfolio" class="nav-link">Portfolio</a>
+            <a href="#apk" class="nav-link">My Apps</a>
             <a href="#contact" class="nav-link">Contact</a>
         </div>
     </nav>
@@ -43,7 +44,8 @@
                 </div>
                 <div class="hero-buttons">
                     <button class="btn-primary" onclick="scrollToSection('portfolio')">View My Work</button>
-                    <button class="btn-secondary" onclick="scrollToSection('contact')">Get In Touch</button>
+                    <button class="btn-neon" onclick="scrollToSection('apk')">My Apps</button>
+                    <button class="btn-elevated" onclick="scrollToSection('contact')">Get In Touch</button>
                 </div>
             </div>
         </div>
@@ -126,6 +128,78 @@
                         <a href="#" class="portfolio-link" target="_blank">View Live</a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- APK Section -->
+    <section id="apk" class="apk-section">
+        <div class="container">
+            <h2 class="section-title">My Work APK</h2>
+            <p class="apk-description">Download and test my mobile applications directly on your Android device</p>
+            <div class="apk-grid">
+                <div class="apk-item">
+                    <div class="apk-icon">🧠</div>
+                    <h3>BrainBuzz</h3>
+                    <p>Interactive quiz application for educational learning</p>
+                    <div class="apk-actions">
+                        <a href="brainbuzz.apk" class="apk-download" download>Download APK</a>
+                        <button class="apk-test" onclick="testApp('BrainBuzz')">Test App</button>
+                    </div>
+                </div>
+                
+                <div class="apk-item">
+                    <div class="apk-icon">📅</div>
+                    <h3>Calendar</h3>
+                    <p>Smart calendar app with event management features</p>
+                    <div class="apk-actions">
+                        <a href="Calendar.apk" class="apk-download" download>Download APK</a>
+                        <button class="apk-test" onclick="testApp('Calendar')">Test App</button>
+                    </div>
+                </div>
+                
+                <div class="apk-item">
+                    <div class="apk-icon">📺</div>
+                    <h3>RTV Prototype</h3>
+                    <p>Real-time video streaming application prototype</p>
+                    <div class="apk-actions">
+                        <a href="RTV Prototype.apk" class="apk-download" download>Download APK</a>
+                        <button class="apk-test" onclick="testApp('RTV Prototype')">Test App</button>
+                    </div>
+                </div>
+                
+                <div class="apk-item">
+                    <div class="apk-icon">🧪</div>
+                    <h3>Test App</h3>
+                    <p>Development testing application for various features</p>
+                    <div class="apk-actions">
+                        <a href="Test App.apk" class="apk-download" download>Download APK</a>
+                        <button class="apk-test" onclick="testApp('Test App')">Test App</button>
+                    </div>
+                </div>
+                
+                <div class="apk-item">
+                    <div class="apk-icon">👨‍💼</div>
+                    <h3>Admin Panel</h3>
+                    <p>Administrative dashboard for school management system</p>
+                    <div class="apk-actions">
+                        <a href="Admin Pannel.apk" class="apk-download" download>Download APK</a>
+                        <button class="apk-test" onclick="testApp('Admin Panel')">Test App</button>
+                    </div>
+                </div>
+                
+                <div class="apk-item">
+                    <div class="apk-icon">🎓</div>
+                    <h3>Limra Student Portal</h3>
+                    <p>Student portal for Limra Convent School with academic features</p>
+                    <div class="apk-actions">
+                        <a href="Limra Student Portal.apk" class="apk-download" download>Download APK</a>
+                        <button class="apk-test" onclick="testApp('Limra Student Portal')">Test App</button>
+                    </div>
+                </div>
+            </div>
+            <div class="apk-note">
+                <p><strong>Note:</strong> Enable "Install from unknown sources" in your Android settings to install these APKs</p>
             </div>
         </div>
     </section>

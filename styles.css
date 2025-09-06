@@ -174,6 +174,72 @@ body {
     transform: translateY(-2px);
 }
 
+.btn-neon {
+    padding: 1rem 2rem;
+    border: 2px solid var(--accent);
+    border-radius: 50px;
+    background: transparent;
+    color: var(--accent);
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+    animation: neonPulse 2s infinite alternate;
+}
+
+.btn-neon:hover {
+    background: var(--accent);
+    color: var(--dark);
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(6, 182, 212, 0.6), 0 0 60px rgba(6, 182, 212, 0.4);
+}
+
+@keyframes neonPulse {
+    0% {
+        box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+    }
+    100% {
+        box-shadow: 0 0 25px rgba(6, 182, 212, 0.5), 0 0 40px rgba(6, 182, 212, 0.3);
+    }
+}
+
+.btn-elevated {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(145deg, #1e293b, #0f172a);
+    color: var(--light);
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1rem;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 
+        8px 8px 16px rgba(0, 0, 0, 0.4),
+        -8px -8px 16px rgba(255, 255, 255, 0.05),
+        inset 0 0 0 1px rgba(99, 102, 241, 0.2);
+}
+
+.btn-elevated:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+        12px 12px 24px rgba(0, 0, 0, 0.5),
+        -12px -12px 24px rgba(255, 255, 255, 0.08),
+        inset 0 0 0 1px var(--primary),
+        0 0 20px rgba(99, 102, 241, 0.3);
+    background: linear-gradient(145deg, #334155, #1e293b);
+}
+
+.btn-elevated:active {
+    transform: translateY(-2px);
+    box-shadow: 
+        4px 4px 8px rgba(0, 0, 0, 0.3),
+        -4px -4px 8px rgba(255, 255, 255, 0.03);
+}
+
 .hero-3d {
     flex: 1;
     height: 100vh;
@@ -334,6 +400,114 @@ section {
     border-radius: 15px;
     font-size: 0.8rem;
     font-weight: 500;
+}
+
+/* APK Section */
+.apk-section {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(6, 182, 212, 0.1));
+}
+
+.apk-description {
+    text-align: center;
+    color: var(--gray);
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.apk-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.apk-item {
+    background: rgba(15, 23, 42, 0.8);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    transition: all 0.3s ease;
+}
+
+.apk-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+    border-color: var(--primary);
+}
+
+.apk-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.apk-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--light);
+}
+
+.apk-item p {
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.apk-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.apk-download, .apk-test {
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+}
+
+.apk-download {
+    background: var(--gradient);
+    color: white;
+}
+
+.apk-download:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+}
+
+.apk-test {
+    background: transparent;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+}
+
+.apk-test:hover {
+    background: var(--accent);
+    color: var(--dark);
+    transform: translateY(-2px);
+}
+
+.apk-note {
+    background: rgba(6, 182, 212, 0.1);
+    border: 1px solid var(--accent);
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.apk-note p {
+    color: var(--accent);
+    margin: 0;
 }
 
 /* Contact Section */
@@ -589,6 +763,25 @@ section {
         font-size: 0.9rem;
         word-break: break-all;
     }
+    
+    .apk-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .apk-item {
+        padding: 1.5rem;
+    }
+    
+    .apk-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .apk-download, .apk-test {
+        width: 100%;
+        max-width: 200px;
+    }
 }
 
 /* Animations */
@@ -651,6 +844,126 @@ section {
 .whatsapp-float svg {
     width: 30px;
     height: 30px;
+}
+
+/* Test Modal Styles */
+.test-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.test-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.test-modal-content {
+    background: var(--dark);
+    border: 1px solid var(--primary);
+    border-radius: 20px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+.test-modal.show .test-modal-content {
+    transform: scale(1);
+}
+
+.test-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.test-modal-header h3 {
+    color: var(--light);
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.test-modal-close {
+    background: none;
+    border: none;
+    color: var(--gray);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.test-modal-close:hover {
+    background: rgba(99, 102, 241, 0.2);
+    color: var(--primary);
+}
+
+.test-modal-body {
+    padding: 1.5rem;
+}
+
+.test-steps, .test-features {
+    margin-bottom: 1.5rem;
+}
+
+.test-steps h4, .test-features h4 {
+    color: var(--accent);
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.test-steps ol, .test-features ul {
+    color: var(--gray);
+    padding-left: 1.2rem;
+    line-height: 1.6;
+}
+
+.test-steps li, .test-features li {
+    margin-bottom: 0.5rem;
+}
+
+.test-actions {
+    text-align: center;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.feedback-btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: #25d366;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.feedback-btn:hover {
+    background: #128c7e;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
 }
 
 /* Smooth scrolling */
